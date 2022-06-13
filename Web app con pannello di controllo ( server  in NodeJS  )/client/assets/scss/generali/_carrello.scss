@@ -1,0 +1,25 @@
+.carrelloproduct {
+    display: flex;
+
+    p {
+        margin-right: 60px;
+        font-size: x-large;
+    }
+
+    img {
+        width: 100px;
+        padding: 10px;
+    }
+}
+
+.modal-footer {
+    p {
+        color: $soldiRimasti-Pagamenti;
+
+        font-weight: bold;
+    }
+}
+
+.space {
+    margin-left: 20px;
+}

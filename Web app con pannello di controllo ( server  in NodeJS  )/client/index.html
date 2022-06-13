@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/scss/app.css">
+  </head>
+  <body>
+    <!--   navbar  -->
+    <header class="p-3 mb-3 border-bottom">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+          </a>
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li>
+              <a href="#" class=" nav-link px-2 link-secondary logo">LOGO</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-2 link-dark">lorem</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-2 link-dark">lorem2</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-2 link-dark">lorem3</a>
+            </li>
+          </ul>
+          <div class="dropdown text-end">
+            <button class="btn btn-dark" onclick="window.location.href='pannello.html'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="36" fill="currentColor" class="bi bi-code-slash" viewBox="0 0 16 16">
+                <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
+              </svg>
+            </button>
+            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <span id="badges" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> 0 <span class="visually-hidden">prodotti</span>
+              </span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="36" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--   Banner -->
+    <section>
+      <!-- primo -->
+      <div class="container first-cta">
+        <div class="custombegin">
+          <div>
+            <h1 class="display-3 mt-5 info titlebn">lorem</h1>
+            <p class="lead t info">Lorem ipsum, ipsum, dolor sit amet consectetur adipisicing elit. Earum, dolor sit amet consectetur adipisicing elit. Earum, quidem. Iure</p>
+            <img src="assets/img/banner.png" alt="banner">
+          </div>
+        </div>
+      </div>
+      <!-- secondo -->
+      <div class="secondbanner">
+        <div class="textbanner2">
+          <h1 class="display-3 mt-5 info titlebn">lorem</h1>
+          <p class="lead t info">Prodotti in primo piano: </p>
+          <div id="primopiano" class="custombannerc "></div>
+        </div>
+      </div>
+    </section>
+    <!--  sezione delle cards -->
+    <section class="section2" id="cards"></section>
+    <!-- carrello -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">il tuo carrello </h5>
+            <button onclick="rimuoviTuttiIProdottiDalCarrello()" class="btn btn-dark space">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+              </svg>
+            </button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <span id="vuoto">
+              <div id="none" class="">Al momento non ci sono articoli in questo carrello!</div>
+            </span>
+            <span id="carrello"></span>
+          </div>
+          <div id="modalfooter" class="modal-footer">
+            <button id="acquista" class="btn btn-dark">Acquista!</button>
+            <p id="totalefondi">Fondi disponibili: 100€ ~ </p>
+            <p id="totalespese">Totale da pagare: 0€ </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+<!--  footer  -->
+    <footer>
+      <div class="container p-4">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 class="mb-3">lorem lorem</h5>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-1">
+                <a href="#!">lorem</a>
+              </li>
+              <li class="mb-1">
+                <a href="#!">lorem</a>
+              </li>
+              <li class="mb-1">
+                <a href="#!">lorem</a>
+              </li>
+              <li>
+                <a href="#!">lorem</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 class="mb-3">lorem lorem</h5>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-1">
+                <a href="#!">lorem</a>
+              </li>
+              <li class="mb-1">
+                <a href="#!">lorem</a>
+              </li>
+              <li class="mb-1">
+                <a href="#!">lorem</a>
+              </li>
+              <li>
+                <a href="#!">lorem</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 class="mb-3">lorem</h5>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-1">
+                <a href="#!">lorem</a>
+              </li>
+              <li class="mb-1">
+                <a href="#!">lorem</a>
+              </li>
+              <li class="mb-1">
+                <a href="#!">lorem</a>
+              </li>
+              <li>
+                <a href="#!">lorem</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 class="mb-3">lorem lorem</h5>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-1">
+                <a href="#!">lorem</a>
+              </li>
+              <li class="mb-1">
+                <a href="#!">lorem</a>
+              </li>
+              <li class="mb-1">
+                <a href="#!">lorem</a>
+              </li>
+              <li>
+                <a href="#!">lorem</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="text-center p-3"> © 2022 Copyright: <a class="text-dark" href="">Cristian laporta</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- End of .container -->
+  </body>
+  <script src="assets/js/script.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</html>

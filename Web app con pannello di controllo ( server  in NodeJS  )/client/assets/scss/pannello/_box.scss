@@ -1,0 +1,35 @@
+#rimuoviprodotti {
+    background-color: rgb(235, 235, 235);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+
+    button {
+        margin-bottom: 20%;
+    }
+
+    img {
+        margin-left: 30px;
+        padding: 10%;
+        width: 60%;
+    }
+}
+
+#modificaprimopiano,
+#aggiungiprod {
+    display: flex;
+    background-color: rgb(235, 235, 235);
+    padding: 10%;
+
+    button {
+        margin-left: 15%;
+    }
+
+    img {
+        padding: 3%;
+        margin-left: 20px;
+        width: 130px;
+        height: 150px;
+    }
+
+}
